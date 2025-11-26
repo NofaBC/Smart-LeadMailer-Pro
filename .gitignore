@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment variables (never commit these!)
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+!.env.local.example
+!.env.example
+
+# Testing
+coverage/
+
+# Next.js
+.next/
+out/
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+*.pem
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Firebase (if you download service account JSON by mistake)
+*-firebase-adminsdk-*.json
+serviceAccountKey.json
+google-credentials.json
+
+# Vercel
+.vercel
+
+# Misc
+*.tsbuildinfo
