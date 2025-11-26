@@ -1,0 +1,52 @@
+/**
+ * Global Styles
+ * Tailwind base layer and custom app-wide styles
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Custom base styles (applied to global elements)
+ */
+@layer base {
+  :root {
+    /* UI colors (matches our component palette) */
+    --color-primary: #2563eb; /* blue-600 */
+    --color-primary-dark: #1d4ed8; /* blue-700 */
+    --color-success: #16a34a; /* green-600 */
+    --color-warning: #eab308; /* yellow-500 */
+    --color-danger: #dc2626; /* red-600 */
+    --color-muted: #6b7280; /* gray-500 */
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-gray-900;
+  }
+
+  a {
+    @apply transition-colors duration-150;
+  }
+
+  button {
+    @apply transition-colors duration-150;
+  }
+}
+
+/**
+ * Custom utility classes
+ */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .loading-spinner {
+    @apply inline-block w-5 h-5 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin;
+  }
+}
