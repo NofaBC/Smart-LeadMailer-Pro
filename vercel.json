@@ -1,0 +1,52 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "crons": [
+    {
+      "path": "/api/cron/process",
+      "schedule": "*/2 * * * *"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "NEXT_PUBLIC_BASE_URL": "@next_public_base_url"
+  },
+  "build": {
+    "env": {
+      "FIREBASE_PROJECT_ID": "@firebase_project_id",
+      "FIREBASE_CLIENT_EMAIL": "@firebase_client_email",
+      "FIREBASE_PRIVATE_KEY": "@firebase_private_key",
+      "SENDGRID_API_KEY": "@sendgrid_api_key",
+      "GOOGLE_PLACES_API_KEY": "@google_places_api_key",
+      "DEBUG_API_KEY": "@debug_api_key",
+      "CRON_SECRET": "@cron_secret"
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, must-revalidate"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
